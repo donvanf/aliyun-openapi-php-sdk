@@ -24,6 +24,7 @@ class EncryptRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Kms", "2016-01-20", "Encrypt");
+		$this->setProtocol("https");
 	}
 
 	private  $keyId;
@@ -31,6 +32,8 @@ class EncryptRequest extends \RpcAcsRequest
 	private  $plaintext;
 
 	private  $sTSToken;
+
+	private  $encryptionContext;
 
 	public function getKeyId() {
 		return $this->keyId;
@@ -57,6 +60,15 @@ class EncryptRequest extends \RpcAcsRequest
 	public function setSTSToken($sTSToken) {
 		$this->sTSToken = $sTSToken;
 		$this->queryParameters["STSToken"]=$sTSToken;
+	}
+
+	public function getEncryptionContext() {
+		return $this->encryptionContext;
+	}
+
+	public function setEncryptionContext($encryptionContext) {
+		$this->encryptionContext = $encryptionContext;
+		$this->queryParameters["EncryptionContext"]=$encryptionContext;
 	}
 	
 }

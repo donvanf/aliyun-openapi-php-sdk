@@ -34,6 +34,8 @@ class StopInstanceRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
+	private  $confirmStop;
+
 	private  $forceStop;
 
 	private  $ownerAccount;
@@ -72,6 +74,15 @@ class StopInstanceRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getConfirmStop() {
+		return $this->confirmStop;
+	}
+
+	public function setConfirmStop($confirmStop) {
+		$this->confirmStop = $confirmStop;
+		$this->queryParameters["ConfirmStop"]=$confirmStop;
 	}
 
 	public function getForceStop() {

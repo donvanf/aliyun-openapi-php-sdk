@@ -28,11 +28,11 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $ownerAccount;
+
 	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
-
-	private  $clientToken;
 
 	private  $dBInstanceId;
 
@@ -42,8 +42,6 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 
 	private  $endTime;
 
-	private  $ownerAccount;
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -51,6 +49,15 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -69,15 +76,6 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getDBInstanceId() {
@@ -114,15 +112,6 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

@@ -34,6 +34,12 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 
 	private  $dBInstanceId;
 
+	private  $nodeId;
+
+	private  $operation;
+
+	private  $force;
+
 	private  $ownerAccount;
 
 	public function getOwnerId() {
@@ -70,6 +76,33 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getNodeId() {
+		return $this->nodeId;
+	}
+
+	public function setNodeId($nodeId) {
+		$this->nodeId = $nodeId;
+		$this->queryParameters["NodeId"]=$nodeId;
+	}
+
+	public function getOperation() {
+		return $this->operation;
+	}
+
+	public function setOperation($operation) {
+		$this->operation = $operation;
+		$this->queryParameters["Operation"]=$operation;
+	}
+
+	public function getForce() {
+		return $this->force;
+	}
+
+	public function setForce($force) {
+		$this->force = $force;
+		$this->queryParameters["Force"]=$force;
 	}
 
 	public function getOwnerAccount() {

@@ -24,9 +24,12 @@ class EnableKeyRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Kms", "2016-01-20", "EnableKey");
+		$this->setProtocol("https");
 	}
 
 	private  $keyId;
+
+	private  $sTSToken;
 
 	public function getKeyId() {
 		return $this->keyId;
@@ -35,6 +38,15 @@ class EnableKeyRequest extends \RpcAcsRequest
 	public function setKeyId($keyId) {
 		$this->keyId = $keyId;
 		$this->queryParameters["KeyId"]=$keyId;
+	}
+
+	public function getSTSToken() {
+		return $this->sTSToken;
+	}
+
+	public function setSTSToken($sTSToken) {
+		$this->sTSToken = $sTSToken;
+		$this->queryParameters["STSToken"]=$sTSToken;
 	}
 	
 }

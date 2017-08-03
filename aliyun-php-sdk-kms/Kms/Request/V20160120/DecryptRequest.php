@@ -24,11 +24,14 @@ class DecryptRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Kms", "2016-01-20", "Decrypt");
+		$this->setProtocol("https");
 	}
 
 	private  $ciphertextBlob;
 
 	private  $sTSToken;
+
+	private  $encryptionContext;
 
 	public function getCiphertextBlob() {
 		return $this->ciphertextBlob;
@@ -46,6 +49,15 @@ class DecryptRequest extends \RpcAcsRequest
 	public function setSTSToken($sTSToken) {
 		$this->sTSToken = $sTSToken;
 		$this->queryParameters["STSToken"]=$sTSToken;
+	}
+
+	public function getEncryptionContext() {
+		return $this->encryptionContext;
+	}
+
+	public function setEncryptionContext($encryptionContext) {
+		$this->encryptionContext = $encryptionContext;
+		$this->queryParameters["EncryptionContext"]=$encryptionContext;
 	}
 	
 }

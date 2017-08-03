@@ -24,6 +24,7 @@ class GenerateDataKeyRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Kms", "2016-01-20", "GenerateDataKey");
+		$this->setProtocol("https");
 	}
 
 	private  $keyId;
@@ -33,6 +34,8 @@ class GenerateDataKeyRequest extends \RpcAcsRequest
 	private  $numberOfBytes;
 
 	private  $sTSToken;
+
+	private  $encryptionContext;
 
 	public function getKeyId() {
 		return $this->keyId;
@@ -68,6 +71,15 @@ class GenerateDataKeyRequest extends \RpcAcsRequest
 	public function setSTSToken($sTSToken) {
 		$this->sTSToken = $sTSToken;
 		$this->queryParameters["STSToken"]=$sTSToken;
+	}
+
+	public function getEncryptionContext() {
+		return $this->encryptionContext;
+	}
+
+	public function setEncryptionContext($encryptionContext) {
+		$this->encryptionContext = $encryptionContext;
+		$this->queryParameters["EncryptionContext"]=$encryptionContext;
 	}
 	
 }

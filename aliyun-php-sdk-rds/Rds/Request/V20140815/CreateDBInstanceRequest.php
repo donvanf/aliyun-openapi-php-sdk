@@ -32,8 +32,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $clientToken;
-
 	private  $engine;
 
 	private  $engineVersion;
@@ -50,6 +48,8 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 
 	private  $securityIPList;
 
+	private  $clientToken;
+
 	private  $payType;
 
 	private  $zoneId;
@@ -65,6 +65,10 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 	private  $privateIpAddress;
 
 	private  $ownerAccount;
+
+	private  $usedTime;
+
+	private  $period;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -91,15 +95,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getEngine() {
@@ -174,6 +169,15 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityIPList"]=$securityIPList;
 	}
 
+	public function getClientToken() {
+		return $this->clientToken;
+	}
+
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
 	public function getPayType() {
 		return $this->payType;
 	}
@@ -244,6 +248,24 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getUsedTime() {
+		return $this->usedTime;
+	}
+
+	public function setUsedTime($usedTime) {
+		$this->usedTime = $usedTime;
+		$this->queryParameters["UsedTime"]=$usedTime;
+	}
+
+	public function getPeriod() {
+		return $this->period;
+	}
+
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
 	}
 	
 }
